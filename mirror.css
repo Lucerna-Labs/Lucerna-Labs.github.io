@@ -1,0 +1,34 @@
+.atomMirrorNotice {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 99999;
+  max-width: 390px;
+  padding: 12px 14px;
+  border: 1px solid rgba(213, 170, 67, .7);
+  background: rgba(9, 13, 16, .94);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, .38);
+  color: #dce5e4;
+  font: 11px/1.5 ui-monospace, SFMono-Regular, Consolas, monospace;
+}
+
+.atomMirrorNotice strong {
+  display: block;
+  color: #d5aa43;
+  margin-bottom: 3px;
+  letter-spacing: .08em;
+}
+
+.atomMirrorNotice a {
+  color: #63d3ca;
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .atomMirrorNotice {
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    max-width: none;
+  }
+}
