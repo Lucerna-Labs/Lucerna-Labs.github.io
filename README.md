@@ -8,10 +8,7 @@ Atom architecture journal.
 - Lucerna Labs source collection: <https://github.com/Lucerna-Labs>
 
 The snapshot preserves the public articles, project pages, images, styles, and
-browser-side architecture demonstrations. GitHub Pages cannot host the
-authenticated OpenRouter and D1 runtime, so Atom Vibe Coder generations open on
-the canonical Sites deployment. Generated application ZIPs remain available
-there.
+browser-side architecture demonstrations.
 
 ## Refreshing the mirror
 

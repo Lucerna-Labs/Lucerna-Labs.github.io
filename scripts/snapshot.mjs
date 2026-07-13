@@ -4,7 +4,7 @@ import { fileURLToPath } from "node:url";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const client = "C:\\Projects\\architecture-blog\\dist\\client";
-const canonical = "https://atom-architecture-lab.jgalicea.chatgpt.site";
+const canonical = process.env.ATOM_SNAPSHOT_SOURCE ?? "https://atom-architecture-lab.jgalicea.chatgpt.site";
 const routes = [
   "",
   "aedes",

@@ -32,9 +32,12 @@ for (const [route, marker] of routes) {
 const home = await readFile(path.join(root, "index.html"), "utf8");
 const mirrorScript = await readFile(path.join(root, "mirror.js"), "utf8");
 const license = await readFile(path.join(root, "LICENSE"), "utf8");
-assert(home.includes("THINKING MODEL REQUIRED"), "homepage is missing the Vibe model requirement");
-assert(home.includes("50K TOKENS / RUN"), "homepage is missing the public Vibe limit");
-assert(mirrorScript.includes("atom-architecture-lab.jgalicea.chatgpt.site"), "Vibe handoff is missing its canonical target");
+for (const removed of ["Atom Vibe Coder", "Vibe Coder", "THINKING MODEL REQUIRED", "50K TOKENS / RUN", "coder-title", "/api/vibe"]) {
+  assert(!home.includes(removed), `homepage still contains removed coder reference: ${removed}`);
+  assert(!mirrorScript.includes(removed), `mirror helper still contains removed coder reference: ${removed}`);
+}
+assert(home.includes("<strong>15</strong><span>UNIQUE REPOSITORIES</span>"), "homepage is missing the current repository count");
+assert(home.includes("NO PRODUCT TELEMETRY"), "homepage is missing the privacy statement");
 assert(license.startsWith("# PolyForm Small Business License 1.0.0"), "license is not the required PolyForm version");
 
 console.log(`Verified ${routes.size} static routes and their referenced assets.`);
